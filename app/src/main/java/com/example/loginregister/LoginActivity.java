@@ -42,6 +42,10 @@ public class LoginActivity extends AppCompatActivity {
             SharedPreferences sharedPreferences=getSharedPreferences("Myfile",MODE_PRIVATE);
             SharedPreferences.Editor editor=sharedPreferences.edit();
             editor.putString("LOGEDIN","1");
+            editor.putString("username",user.getUsername());
+            editor.putString("mobile",user.getMobile());
+            editor.putString("Email",user.getEmail());
+          //  editor.putString("password",user.getPassword());
 
             editor.commit();
             Intent intent=new Intent(LoginActivity.this,MainActivity.class);

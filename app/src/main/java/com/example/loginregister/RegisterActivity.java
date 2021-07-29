@@ -111,15 +111,16 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (Flag == 0) {
                     signup();
+//                    SharedPreferences sharedPreferences=getSharedPreferences("Myfile",MODE_PRIVATE);
+//                    SharedPreferences.Editor editor=sharedPreferences.edit();
+//                    editor.putString("username",useredt.getText().toString());
+//                    editor.putString("mobile",mobedt.getText().toString());
+//                    editor.putString("Email",emailedt.getText().toString());
+//                    editor.putString("password",passedt.getText().toString());
+//                    editor.commit();
+
                 }
 
-                SharedPreferences sharedPreferences=getSharedPreferences("Myfile",MODE_PRIVATE);
-                SharedPreferences.Editor editor=sharedPreferences.edit();
-                editor.putString("username",useredt.getText().toString());
-                editor.putString("mobile",mobedt.getText().toString());
-                editor.putString("Email",emailedt.getText().toString());
-                editor.putString("password",passedt.getText().toString());
-                editor.commit();
 
 
             }

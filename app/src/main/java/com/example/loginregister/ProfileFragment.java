@@ -35,9 +35,16 @@ public class ProfileFragment extends Fragment {
             phone=getArguments().getString("phone");
 
         }
+
+        @SuppressLint("WrongConstant") SharedPreferences sharedPreferences=getActivity().getSharedPreferences("Myfile", MODE_APPEND);
+        String namee=sharedPreferences.getString("username","");
+        String mobilee=sharedPreferences.getString("mobile","");
+        String emaill=sharedPreferences.getString("Email","");
+        String password=sharedPreferences.getString("password","");
+
         Database database=new Database(getContext());
         User user=new User();
-        user.setMobile(phone);
+        user.setMobile(mobilee);
         userList=database.getUserDetails(user);
 
         for (User user1:userList)
@@ -45,17 +52,6 @@ public class ProfileFragment extends Fragment {
             nametxt.setText(user1.getUsername());
             emailtxt.setText(user1.getEmail());
             phonetext.setText(user1.getMobile());
-
-            @SuppressLint("WrongConstant") SharedPreferences sharedPreferences=getActivity().getSharedPreferences("Myfile", MODE_APPEND);
-            String namee=sharedPreferences.getString("username","");
-            String mobilee=sharedPreferences.getString("mobile","");
-            String emaill=sharedPreferences.getString("Email","");
-            String password=sharedPreferences.getString("password","");
-
-
-            nametxt.setText(namee);
-            phonetext.setText(mobilee);
-            emailtxt.setText(emaill);
         }
 
         return view;
